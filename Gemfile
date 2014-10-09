@@ -11,21 +11,11 @@ gem 'bootstrap-sass'
 
 
 # bundle exec rake doc:rails generates the API under doc/api.
-group :development, :test do
-	gem 'sqlite3'
-end
+gem 'sdoc', '~> 0.4.0',          	group: :doc
 
-group :development, do
 # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
-	gem 'spring'
-end
+gem 'spring',        							group: :development
+gem 'sqlite3',				 						group: :development, group: :test
 
-group :production do
-	gem 'pg'
-	gem 'rails_12factor'
-end
-
-
-group :doc, do
-	gem 'sdoc', '~> 0.4.0', require: false
-end
+gem 'pg',													group: :production
+gem 'rails_12factor',							group: :production
